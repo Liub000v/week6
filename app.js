@@ -47,7 +47,7 @@ export default function(express, bodyParser, createReadStream, crypto, http) {
               res.send(login);
           }
           })
-      .all(/./, r => r.res.send('one'))
+     
       .all('/a/', r => r.res.send('two'))
 
     return app;
