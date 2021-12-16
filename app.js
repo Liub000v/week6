@@ -51,6 +51,11 @@ export default function(express, bodyParser, createReadStream, crypto, http) {
           res.set(CORS);
           res.send(login);
           })
-
+.get('/f', r => r
+.res.format({
+'text/html': () => r.res.send(`<h2>Результат 42</h2>`),
+'application/json': () => r.res.json({"Результат:": 42})
+})
+)
     return app;
 }
