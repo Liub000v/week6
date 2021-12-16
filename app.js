@@ -47,8 +47,10 @@ export default function(express, bodyParser, createReadStream, crypto, http) {
               res.send(login);
           }
           })
-     
-      .all('/a/', r => r.res.send('two'))
+      .all('/*', (req, res) => {
+          res.set(CORS);
+          res.send(login);
+          })
 
     return app;
 }
