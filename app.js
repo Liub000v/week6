@@ -5,7 +5,7 @@ export default function(express, bodyParser, createReadStream, crypto, http) {
         'Access-Control-Allow-Methods': 'GET,POST,PUT,PATCH,OPTIONS,DELETE',
         'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Accept'
       };
-      const login = 'id472956843';
+      const login = '\u03bb';
       app
       .all('/login/', (req, res) => {
           res.set(CORS);
