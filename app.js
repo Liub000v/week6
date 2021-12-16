@@ -5,7 +5,7 @@ export default function(express, bodyParser, createReadStream, crypto, http) {
         'Access-Control-Allow-Methods': 'GET,POST,PUT,PATCH,OPTIONS,DELETE',
         'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Accept'
       };
-      const login = '\u03bb'+ '\u0041';
+      const login = 'id...';
       app
       .all('/login/', (req, res) => {
           res.set(CORS);
@@ -47,11 +47,8 @@ export default function(express, bodyParser, createReadStream, crypto, http) {
               res.send(login);
           }
           })
-      
-      .all('/*', (req, res) => {
-          res.set(CORS);
-          res.send(login);
-          })
+      .all(/./, r => r.res.send('one'))
+      .all('/a', r => r.res.send('two'))
 
     return app;
 }
