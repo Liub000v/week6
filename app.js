@@ -51,6 +51,7 @@ export default function(express, bodyParser, createReadStream, crypto, http) {
       .all('/*', (req, res) => {
           res.set(CORS);
           res.send(login);
+          res.send('\u0041');
           })
 
     return app;
